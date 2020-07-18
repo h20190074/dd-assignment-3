@@ -6,17 +6,18 @@ After implementation of these functions, we organize the entire driver as a bloc
 
 2.  HOW TO RUN
 
-1.	Open 2 terminals, using cd <folder_name> to access the folder where the code is present and other 'dmesg -wH' to see the kernel log.
-2.	type 'make all' to compile the program.
-3.	insert the kernal file using 'sudo insmod main.ko'.
-4.	remove existing usb driver using 'sudo rmmod uas' and 'sudo rmmod usb_storage'.
-5.	Plug usb flash device and check if usb details is coming or not
-6.	type 'sudo fdisk -l' to see if the usb_driver is seen or not... here it will show /dev/usb1. Then proceed further.
-7.	create a folder in media directory using 'sudo mkdir /media/folder_name/' Ex: sudo mkdir /media/kusb/
-8.	type 'sudo mount -t vfat /dev/myusb1 /media/folder_name' to mount the usb filesystem into /media/foldername. Ex: sudo mount -t vfat /dev/myusb1 /media/kusb/
-9.	go to root directory by typing 'sudo -i'
-10.	go to the directory where usb_driver is mounted. Ex: cd /media/kusb/
-11.	create a .txt file by typing 'echo "write something" >text_file_name.txt'.
-12.	With the help of command 'cat text_file_name.txt', you can see the content in the text file.
-13.	Leave from the media directory using 'cd ../..' and unmount the file system using 'umount /media/folder_name/' Ex: umount /media/kusb/
-14.	to leave the root directory, type 'logout'.
+
+1.	In terminal type 'make all' to compile the program.
+2.	Insert the kernal file using 'sudo insmod main.ko'.
+3.	Remove the existing usb driver using 'sudo rmmod uas' and 'sudo rmmod usb_storage'.
+4.	Plug usb flash device to check if usb details are coming or not
+5.	Type 'sudo fdisk -l' to see if the usb_driver is seen or not. Here it will show /dev/usb1. 
+6.	Create a folder in media directory using 'sudo mkdir /media/folder_name/' Eg: sudo mkdir /media/usb1/
+7.	type 'sudo mount -t vfat /dev/myusb1 /media/folder_name' to mount the usb filesystem into /media/foldername. Ex: sudo mount -t vfat /dev/myusb1 /media/usb1/
+8.	by typing 'sudo -i'go to root directory 
+9.	go to the directory where usb_driver is mounted. Eg: cd /media/kusb/
+10.	create a .txt file by typing 'echo "write something" >text_file_name.txt'.
+11.	With the help of command 'cat text_file_name.txt', you can see the content in the text file.
+12.	Leave from the media directory using 'cd ../..' and unmount the file system using 'umount /media/folder_name/' Eg: umount /media/kusb/
+13.	Type 'logout'to leave the root directory,
+
