@@ -1,0 +1,29 @@
+
+
+    Open 2 terminals, using cd <folder_name> to access the folder where the code is present and other 'dmesg -wH' to see the kernel log.
+
+    type 'make all' to compile the program.
+
+    insert the kernal file using 'sudo insmod main.ko'.
+
+    remove existing usb driver using 'sudo rmmod uas' and 'sudo rmmod usb_storage'.
+
+    Plug usb flash device and check if usb details is coming or not
+
+    type 'sudo fdisk -l' to see if the usb_driver is seen or not... here it will show /dev/usb1. Then proceed further.
+
+    create a folder in media directory using 'sudo mkdir /media/folder_name/' Ex: sudo mkdir /media/kusb/
+
+    type 'sudo mount -t vfat /dev/myusb1 /media/folder_name' to mount the usb filesystem into /media/foldername. Ex: sudo mount -t vfat /dev/myusb1 /media/kusb/
+
+    go to root directory by typing 'sudo -i'
+
+    go to the directory where usb_driver is mounted. Ex: cd /media/kusb/
+
+    create a .txt file by typing 'echo "write something" >text_file_name.txt'.
+
+    With the help of command 'cat text_file_name.txt', you can see the content in the text file.
+
+    Leave from the media directory using 'cd ../..' and unmount the file system using 'umount /media/folder_name/' Ex: umount /media/kusb/
+
+    to leave the root directory, type 'logout'.
